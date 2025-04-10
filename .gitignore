@@ -173,4 +173,5 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
+# annoying file on macOS
 .DS_Store
