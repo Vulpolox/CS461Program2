@@ -25,9 +25,3 @@ class schedule:
     def calculate_fitness(self):
         for act in self.activities:
             pass
-        
-
-
-
-
-    
