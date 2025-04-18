@@ -9,3 +9,13 @@ class population:
     def generate_schedules(self):
         for i in range(data.config["population_size"]):
             pass
+
+    
+    def next_generation(self):
+        
+        def cross_over():
+            pass
+
+        
+
+

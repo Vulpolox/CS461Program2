@@ -1,8 +1,9 @@
-import csv
+import csv, json
 from pathlib import Path
 
 room_path = Path(__file__).resolve().parent.parent / 'data' / 'rooms.csv'
 activities_path = Path(__file__).resolve().parent.parent / 'data' / 'activities.csv'
+config_path = Path(__file__).resolve().parent.parent / 'config.json'
 
 
 # activity into class for storing predefined activity information from activities.csv
@@ -13,7 +14,7 @@ class activity_info:
         self.facilitators = other_facilitators
 
 
-# function for getting all activities
+# function for getting all activities using activities.csv
 def get_activities() -> dict:
     out = dict()
 
@@ -31,7 +32,7 @@ def get_activities() -> dict:
     return out
 
     
-# function for getting all rooms
+# function for getting all rooms using rooms.csv
 def get_rooms() -> dict:
     out = dict()
 
@@ -44,6 +45,11 @@ def get_rooms() -> dict:
             capacity = int(row[1])
             out[room_name] = capacity
     return out
+
+
+# get config settings
+with open(config_path, "r") as f:
+    config = json.load(f)
 
 
 rooms = get_rooms()            # dict that maps room_name to capacity

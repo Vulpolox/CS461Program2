@@ -1,20 +1,17 @@
 from activity import activity
 import data
-import functools
 import random
 
 class schedule:
-    def __init__(self, activities: list[activity]):
-        self.activities = activities
-        self.total_fitness = sum([act.fitness for act in activities])
+    def __init__(self):
+        self.activities = self.generate_schedule
+        self.fitness = 0
 
-    @staticmethod
-    def generate_schedule():
-        schdl = schedule([])
+    def generate_schedule(self):
         activity_names = list(data.activities.keys())
         room_names = list(data.rooms.keys())
 
-
+        # for each activity, assign random times, rooms, and facilitators
         for activity_name in activity_names:
             activity_to_add = activity (
                 id=activity_name,
@@ -22,6 +19,15 @@ class schedule:
                 time=random.choice(data.times),
                 facilitator=random.choice(data.facilitators)
             )
+        self.activities.append(activity_to_add)
+
+
+    def calculate_fitness(self):
+        for act in self.activities:
+            pass
+        
+
+
 
 
     
