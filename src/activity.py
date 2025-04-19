@@ -31,8 +31,8 @@ class activity:
         room_capacity = room_dict[ac.room]
 
         if expected_enrlmnt > room_capacity:       return -0.5
-        elif expected_enrlmnt * 3 < room_capacity: return -0.2
         elif expected_enrlmnt * 6 < room_capacity: return -0.4
+        elif expected_enrlmnt * 3 < room_capacity: return -0.2
         else:                                      return  0.3
 
     @staticmethod
