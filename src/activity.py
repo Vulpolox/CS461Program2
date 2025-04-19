@@ -25,10 +25,10 @@ class activity:
         return fitness_total
     
     @staticmethod
-    def room_size_fitness(ac: 'activity', ac_dict: dict[activity_info]) -> float:
+    def room_size_fitness(ac: 'activity', ac_dict: dict[activity_info], room_dict: dict[str]) -> float:
         ac_info: activity_info = ac_dict[ac.id]
         expected_enrlmnt = ac_info.expected_enrollment
-        room_capacity = rooms[ac.room]
+        room_capacity = room_dict[ac.room]
 
         if expected_enrlmnt > room_capacity:       return -0.5
         elif expected_enrlmnt * 3 < room_capacity: return -0.2
@@ -101,7 +101,7 @@ class activity:
     def activity_specific_fitness(acs: list['activity']) -> float:
 
         # if using a different dataset, skip this function
-        activity_names = activities.keys()
+        activity_names = [ac.id for ac in acs]
         if ("SLA100A" not in activity_names or "SLA100B" not in activity_names or
             "SLA191A" not in activity_names or "SLA191B" not in activity_names):
             return 0.0
@@ -118,10 +118,10 @@ class activity:
         def roman_beach_predicate(ac: 'activity') -> bool:
             return ac.room.split()[0] in ("Roman", "Beach")
         
-        sla100a = activities["SLA100A"]
-        sla100b = activities["SLA100B"]
-        sla191a = activities["SLA191A"]
-        sla191b = activities["SLA191B"]
+        sla100a = list(filter(lambda e: e.id == "SLA100A", acs))[0]
+        sla100b = list(filter(lambda e: e.id == "SLA100B", acs))[0]
+        sla191a = list(filter(lambda e: e.id == "SLA191A", acs))[0]
+        sla191b = list(filter(lambda e: e.id == "SLA191B", acs))[0]
 
 
         if get_delta_hours(sla100a, sla100b) > 4: fitness_total += 0.5
