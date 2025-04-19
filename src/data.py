@@ -52,7 +52,7 @@ with open(config_path, "r") as f:
     config = json.load(f)
 
 
-rooms = get_rooms()            # dict that maps room_name to capacity
+rooms = get_rooms()            # dict that maps room_name (str) to capacity (int)
 activities = get_activities()  # dict that maps activity_name to instance of activity_info
 facilitators = {'Lock', 'Glen', 'Banks', 'Richards', 'Shaw', 'Singer', 'Uther', 'Tyler', 'Numen', 'Zeldin'}
-times = [10, 11, 12, 1, 2, 3]
+times = [10, 11, 12, 13, 14, 15]
