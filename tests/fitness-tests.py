@@ -2,7 +2,6 @@ import sys
 sys.path.append('src')
 
 import unittest
-from collections import defaultdict
 from activity import activity
 from data import activity_info
 
@@ -11,18 +10,38 @@ class TestActivity(unittest.TestCase):
     def setUp(self):
         # Initialize common test data
         self.ac_dict = {
-            "SLA100A": activity_info(expected_enrollment=25, preferred_facilitators=set(), other_facilitators=set()),
-            "SLA100B": activity_info(expected_enrollment=50, preferred_facilitators=set(), other_facilitators=set()),
-            "SLA191A": activity_info(expected_enrollment=100, preferred_facilitators=set(), other_facilitators=set()),
-            "SLA191B": activity_info(expected_enrollment=75, preferred_facilitators=set(), other_facilitators=set()),
-            "CS441": activity_info(expected_enrollment=500, preferred_facilitators=set(), other_facilitators=set())
-        }
+        "SLA100A": activity_info(
+            expected_enrollment=25,
+            preferred_facilitators={"John", "Emily"},
+            other_facilitators={"Alice", "Claire"}
+        ),
+        "SLA100B": activity_info(
+            expected_enrollment=50,
+            preferred_facilitators={"Alice"},
+            other_facilitators={"John", "Claire"}
+        ),
+        "SLA191A": activity_info(
+            expected_enrollment=100,
+            preferred_facilitators={"Bob"},
+            other_facilitators={"Claire", "Hare"}
+        ),
+        "SLA191B": activity_info(
+            expected_enrollment=75,
+            preferred_facilitators={"Claire"},
+            other_facilitators={"Alice", "Bob"}
+        ),
+        "CS441": activity_info(
+            expected_enrollment=500,
+            preferred_facilitators={"Hare"},
+            other_facilitators={"Bob", "John"}
+        )
+    }
 
         # Room capacities (example)
         self.room_dict = {
             "Room1": 30,   # Room1 can hold 30 people
             "Room2": 50,   # Room2 can hold 50 people
-            "Room3": 1000, # Room3 can hold 1000 people
+            "Room3": 1000, # Big Room
             "Room4": 5     # Tiny room
         }
 
