@@ -73,13 +73,3 @@ class population:
         schedules_copy = [sched for _, sched in self.schedules]
         schedules_copy.sort(key=lambda sched: sched.fitness, reverse=True)
         return schedules_copy[:amount]
-
-        
-
-
-    
-
-
-        
-
-
