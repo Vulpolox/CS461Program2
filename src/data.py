@@ -63,8 +63,10 @@ def get_times() -> list:
     out = []
     with open(time_path, mode="r", newline="") as time_file:
         reader = csv.reader(time_file)
-        for fac in reader: out.append(fac)
-    return out[0]
+        for row in reader:
+            for column in row:
+                out.append(int(column))
+    return out
 
 
 # get config settings

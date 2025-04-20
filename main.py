@@ -5,7 +5,7 @@ from schedule import schedule
 import data
 
 def main():
-    pass
+    s = schedule()
 
 if __name__ == "__main__":
     main()
