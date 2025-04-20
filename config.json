@@ -2,5 +2,7 @@
     "population_size": 500,
     "min_num_of_generations": 100,
     "improvement_delta_cutoff": 0.01,
-    "mutation_rate": 0.01
+    "mutation_rate": 0.01,
+    "cull_percentage": 0.2,
+    "breeding_percentile": 0.8
 }
