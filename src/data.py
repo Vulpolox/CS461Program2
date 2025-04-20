@@ -3,6 +3,7 @@ from pathlib import Path
 
 room_path = Path(__file__).resolve().parent.parent / 'data' / 'rooms.csv'
 activities_path = Path(__file__).resolve().parent.parent / 'data' / 'activities.csv'
+facilitators_path = Path(__file__).resolve().parent.parent / 'data' / 'facilitators.csv'
 config_path = Path(__file__).resolve().parent.parent / 'config.json'
 
 
@@ -47,6 +48,14 @@ def get_rooms() -> dict:
     return out
 
 
+# get facilitators
+def get_facilitators() -> list:
+    out = []
+    with open(facilitators_path, mode="r", newline="") as facilitator_file:
+        reader = csv.reader(facilitator_file)
+        for fac in reader: out.append(fac)
+
+
 # get config settings
 with open(config_path, "r") as f:
     config = json.load(f)
@@ -54,5 +63,5 @@ with open(config_path, "r") as f:
 
 rooms = get_rooms()            # dict that maps room_name (str) to capacity (int)
 activities = get_activities()  # dict that maps activity_name to instance of activity_info
-facilitators = {'Lock', 'Glen', 'Banks', 'Richards', 'Shaw', 'Singer', 'Uther', 'Tyler', 'Numen', 'Zeldin'}
+facilitators = get_facilitators()
 times = [10, 11, 12, 13, 14, 15]
