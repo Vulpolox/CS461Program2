@@ -6,6 +6,7 @@ import data
 
 def main():
     s = schedule()
+    print(f'FITNESS:\n---\n{s.fitness}')
 
 if __name__ == "__main__":
     main()
