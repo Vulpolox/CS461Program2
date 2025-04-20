@@ -25,7 +25,7 @@ class activity:
         return fitness_total
     
     @staticmethod
-    def room_size_fitness(ac: 'activity', ac_dict: dict[activity_info], room_dict: dict[str]) -> float:
+    def room_size_fitness(ac: 'activity', ac_dict: dict[str, activity_info], room_dict: dict[str, int]) -> float:
         ac_info: activity_info = ac_dict[ac.id]
         expected_enrlmnt = ac_info.expected_enrollment
         room_capacity = room_dict[ac.room]
@@ -36,7 +36,7 @@ class activity:
         else:                                      return  0.3
 
     @staticmethod
-    def preferred_facilitator_fitness(ac: 'activity', ac_dict: dict[activity_info]) -> float:
+    def preferred_facilitator_fitness(ac: 'activity', ac_dict: dict[str, activity_info]) -> float:
         ac_info: activity_info = ac_dict[ac.id]
         preferred = ac_info.preferred_facilitators
         other = ac_info.facilitators
@@ -140,13 +140,3 @@ class activity:
                 elif is_coincident(sla100, sla191):  fitness_total -= 0.25
         
         return fitness_total
-        
-
-
-        
-
-
-
-
-
-

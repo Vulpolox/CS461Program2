@@ -54,6 +54,7 @@ def get_facilitators() -> list:
     with open(facilitators_path, mode="r", newline="") as facilitator_file:
         reader = csv.reader(facilitator_file)
         for fac in reader: out.append(fac)
+    return out[0]
 
 
 # get config settings
@@ -61,7 +62,7 @@ with open(config_path, "r") as f:
     config = json.load(f)
 
 
-rooms = get_rooms()            # dict that maps room_name (str) to capacity (int)
-activities = get_activities()  # dict that maps activity_name to instance of activity_info
-facilitators = get_facilitators()
+rooms = get_rooms()                # dict that maps room_name (str) to capacity (int)
+activities = get_activities()      # dict that maps activity_name to instance of activity_info
+facilitators = get_facilitators()  # list of possible facilitators for random assignment
 times = [10, 11, 12, 13, 14, 15]
