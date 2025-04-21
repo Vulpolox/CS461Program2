@@ -1,0 +1,9 @@
+# Reflection
+## What were the challenges in writing the program?  Or did it seem to go smoothly from the beginning?
+For the most part, writing the program went smoothly.  As I used a min heap using `heapq` for eliminating the least fit schedules, I did run into a strange bug when I was testing completed genetic algorithm.  The min heap from that module, when calling `heappush` with a tuple as the second argument, will compare the second elements of the tuples if there is a tie between the first when reheapifying.  This led to a strange contract violation error message for the `<` operator that had me stumped for quite a bit.  After staring at my screen making no progress for a good minute, I finally caved and asked AI.  Apparently I needed to overload the `<` operator for my schedule class to fix this issue (a schedule object was the second element in the tuple)
+## What do you think of the [schedule](https://github.com/Vulpolox/CS461Program2/blob/main/output/output.txt) your program produced.  Does it have anything that still looks odd or out of place?
+It looks fine as far as I can tell.  Just from a cursory glance, it looks like the facilitator allocation is pretty good in terms of the fitness function; Singer is scheduled 3 times, which avoids the penalty
+## How would you improve the program, or change the fitness function?
+I can't think of anything I would do to change the fitness function, but I could (if I had more time) add a dynamic mutation rate that would increase if the algorithm sensed it was plateauing and/or decrease if it sensed that average fitness was falling.
+## Closing Note
+As I am about to graduate, I kind of wanted to go above and beyond with this program hence OCD-like project structure, unit testing, a config file etc.  I also wrote the program entirely without AI generated code (except for the unit tests)
