@@ -1,0 +1,81 @@
+BEST SCHEDULE:
+- - - - - - - - -
+ - - - - - - - -
+ACTIVITY #1:
+---
+   NAME:         SLA100A
+   ROOM:         Beach 301
+   TIME:         11
+   FACILITATOR:  Lock
+
+ACTIVITY #2:
+---
+   NAME:         SLA100B
+   ROOM:         Beach 201
+   TIME:         2
+   FACILITATOR:  Uther
+
+ACTIVITY #3:
+---
+   NAME:         SLA191A
+   ROOM:         Frank 119
+   TIME:         2
+   FACILITATOR:  Banks
+
+ACTIVITY #4:
+---
+   NAME:         SLA191B
+   ROOM:         Roman 201
+   TIME:         10
+   FACILITATOR:  Singer
+
+ACTIVITY #5:
+---
+   NAME:         SLA201
+   ROOM:         Loft 310
+   TIME:         0
+   FACILITATOR:  Uther
+
+ACTIVITY #6:
+---
+   NAME:         SLA291
+   ROOM:         Loft 206
+   TIME:         1
+   FACILITATOR:  Lock
+
+ACTIVITY #7:
+---
+   NAME:         SLA303
+   ROOM:         Beach 201
+   TIME:         10
+   FACILITATOR:  Singer
+
+ACTIVITY #8:
+---
+   NAME:         SLA304
+   ROOM:         Frank 119
+   TIME:         2
+   FACILITATOR:  Numen
+
+ACTIVITY #9:
+---
+   NAME:         SLA394
+   ROOM:         Roman 201
+   TIME:         0
+   FACILITATOR:  Shaw
+
+ACTIVITY #10:
+---
+   NAME:         SLA449
+   ROOM:         Loft 206
+   TIME:         0
+   FACILITATOR:  Glen
+
+ACTIVITY #11:
+---
+   NAME:         SLA451
+   ROOM:         Slater 003
+   TIME:         0
+   FACILITATOR:  Singer
+*********************************
+FITNESS: 7.6

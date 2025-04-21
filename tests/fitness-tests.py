@@ -5,7 +5,7 @@ import unittest
 from activity import activity
 from data import activity_info
 
-class TestActivity(unittest.TestCase):
+class FitnessTests(unittest.TestCase):
 
     def setUp(self):
         # activity info

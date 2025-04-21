@@ -9,6 +9,10 @@ class activity:
         self.time = time                # the timeslot of the activity
         self.facilitator = facilitator  # facilitator for the activity
 
+
+    def __str__(self):
+        return f'   NAME:         {self.id}\n   ROOM:         {self.room}\n   TIME:         {self.time % 12}\n   FACILITATOR:  {self.facilitator.strip()}'
+
     @staticmethod    
     def same_room_and_time_fitness(acs: list['activity']) -> float:
         fitness_total = 0.0

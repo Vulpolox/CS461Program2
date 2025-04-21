@@ -1,6 +1,6 @@
 {
     "population_size": 500,
-    "min_num_of_generations": 100,
+    "min_num_of_generations": 200,
     "improvement_delta_cutoff": 0.01,
     "mutation_rate": 0.01,
     "cull_percentage": 0.2,

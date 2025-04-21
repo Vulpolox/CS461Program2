@@ -1,11 +1,13 @@
 from schedule import schedule
-import heapq, random
+import heapq, random, statistics, itertools
 
 class population:
     def __init__(self):
         # priority queue for schedules based on fitness
-        self.schedules: tuple[float, schedule] = [] 
+        self.schedules: tuple[float, schedule] = []
 
+    # function for getting average fitness of entire population
+    def get_fitness_avg(self): return statistics.mean([sched.fitness for _, sched in self.schedules])
 
     # priority queue manipulation functions
     def _add_schedule(self, schedule_to_add:schedule):

@@ -10,6 +10,18 @@ class schedule:
         self._generate_schedule()
         self.calculate_fitness()
 
+    def __str__(self):
+        parts = []
+        for i in range(len(self.activities)):
+            parts.append(f'ACTIVITY #{i+1}:\n---\n{str(self.activities[i])}')
+        return '\n\n'.join(parts)
+    
+    def __lt__(self, other: 'schedule'):
+        if self.fitness == other.fitness: 
+            return self.activities[0].id < other.activities[0].id
+        else:
+            return self.fitness < other.fitness
+
     def _generate_schedule(self):
         activity_names = list(data.activities.keys())
         room_names = list(data.rooms.keys())
